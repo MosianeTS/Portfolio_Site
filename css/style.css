@@ -106,14 +106,14 @@ h2 {color:var(--clr-comp)}
 }
 
 .section__title--intro {
-    background: var(--clr-comp);
-    border-radius: 12px;
+    /* background: var(--clr-comp); */
+    /* border-radius: 1px; */
     font-weight: var(--fw-reg);
-    padding: 0 12px;
+    padding: 0 6px;
 }
 
 .section__title--intro strong {
-    display: block;
+    display:inline-block;
 }
 
 .section__subtitle {
@@ -123,11 +123,12 @@ h2 {color:var(--clr-comp)}
 
 .section__subtitle--intro,
 .section__subtitle--about {
-    background: var(--clr-accent);
+    background: #5D76A9;
     border-radius: 12px;
     padding: 1.5em 1.2em;
     font-family: var(--ff-secondary);
-    margin-bottom: 1em;
+    margin-bottom: 0.2em;
+   
 }
 
 .my-services h2 {color:black}
@@ -248,60 +249,40 @@ header {
 
 .intro {
     position: relative;
+    display: inline-block;
 }
 
 .intro__img {
     box-shadow: var(--bs);
-    border-radius: 6px;
+    border-radius: 20px;
+    position: fixed;    
+    opacity: 1; 
 }
 
-.intro__img {
-    position: relative;
-    animation: slideFromLeft 2s ease-out 0.5s forwards;  /*  2second duration with ease-out timing function and a delay of 0.5s */
-    opacity: 0; 
-}
-
-@keyframes slideFromLeft {                    /*  Animation definition for image to appear fading in from the left */
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+.section__title--intro {   
+    opacity: 0;     
+    overflow: hidden;
+    border-right: .06em solid black;
+    white-space: nowrap;
+    margin: 0 auto; 
+    animation: typing 3s steps(40, end) 1s infinite alternate, slideFromTop 1s ease-out 2s forwards;
 }
 
 .section__subtitle--intro {
-    display: inline-block;
+    position: relative;    
+    opacity: 1; 
+    display: block;
 }
 
-.section__title--intro {
-    position: relative;
-    animation: slideFromTop 2s ease-out 2s forwards;
-    opacity: 0; 
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
 
 @keyframes slideFromTop {           /*  Animation definition for text to appear fading in from the top */
     from {
         transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.section__subtitle--intro {
-    position: relative;
-    animation: slideFromRight 2s ease-out 2.5s forwards;
-    opacity: 0; 
-}
-
-@keyframes slideFromRight {                     /*  Animation definition for text to appear fading in from the right */
-    from {
-        transform: translateX(100%);
         opacity: 0;
     }
     to {
@@ -336,7 +317,7 @@ header {
         text-align: right;
         position: relative;
         left: -1.5em; 
-        width: calc(100% + 1.5em);       /*  Makes the paragraph element's width 100% of its parent's width plus an additional 1.5em width */
+        width: calc(100% + 1.5em);       
     }
 }
 
@@ -387,6 +368,8 @@ header {
     }
 }
 
+/*About Me*/
+
 .about-me {
     max-width: 1000px;
     margin: 0 auto;
@@ -394,6 +377,7 @@ header {
 
 .about-me__img {
     box-shadow: var(--bs);
+    border-radius: 20px;
 }
 
 @media (min-width: 600px) {          /* Grid display for screens bigger than 600px*/
@@ -438,7 +422,7 @@ header {
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Fit as many columns as possible into the available space with a minimum size of 300px*/
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));  /* Fit as many columns as possible into the available space with a minimum size of 300px*/
     grid-auto-rows: 350px;     /*Creates implicit rows with a height of 350px */
     grid-gap:8px;
 }
@@ -616,7 +600,7 @@ textarea:hover {
 /* footer */
 
 .footer {
-    background: #111;
+    background: #003153;
     color: var(--clr-accent);
     text-align: center;
     padding: 2.5em 0;
